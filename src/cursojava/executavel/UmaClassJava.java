@@ -13,6 +13,7 @@ public class UmaClassJava {
 		System.out.println("Eclipse já com token nas configurações");
 		System.out.println("Eclipse e github. Outro teste");
 		System.out.println("Eclipse e github. Outro teste2");
+		System.out.println("Eclipse e github. token in store");
 	}
 
 }
