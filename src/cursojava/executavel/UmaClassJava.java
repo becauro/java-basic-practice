@@ -9,6 +9,7 @@ public class UmaClassJava {
 		System.out.println("Testando saída em Java");
 		System.out.println("Testando é OO");
 		System.out.println("Testando Eclipse com Github");
+		System.out.println("Segundo teste com Eclipse e Github");
 	}
 
 }
