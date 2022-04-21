@@ -10,6 +10,7 @@ public class UmaClassJava {
 		System.out.println("Testando é OO");
 		System.out.println("Testando Eclipse com Github");
 		System.out.println("Segundo teste com Eclipse e Github");
+		System.out.println("Eclipse já com token nas configurações");
 	}
 
 }
