@@ -1,0 +1,1 @@
+# This repo just get together some Java Basic exercises
