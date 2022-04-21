@@ -11,6 +11,7 @@ public class UmaClassJava {
 		System.out.println("Testando Eclipse com Github");
 		System.out.println("Segundo teste com Eclipse e Github");
 		System.out.println("Eclipse já com token nas configurações");
+		System.out.println("Eclipse e github. Outro teste");
 	}
 
 }
