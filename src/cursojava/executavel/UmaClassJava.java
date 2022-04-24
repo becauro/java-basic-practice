@@ -11,10 +11,13 @@ public class UmaClassJava {
 
 		Aluno aluno1 = new Aluno();
 		
-		Aluno aluno2 = new Aluno("Torquato", 64); 
+		aluno1.setNome("Michel");
+		aluno1.setDataMatricula("123456");
 		
 		
-		System.out.println("Nome do aluno: " + aluno2.nome);
+		System.out.println("Nome do aluno: " + aluno1.getNome());
+		System.out.println("Nome do aluno: " + aluno1.getDataMatricula());
+		
 	}
 	
 		
