@@ -18,7 +18,13 @@ public class Aluno {
 	double nota2;
 	double nota3;
 	double nota4;
-	
+
+	String disciplina1;
+	String disciplina2;
+	String disciplina3;
+	String disciplina4;
+
+
 	public Aluno(String nameAluno, int idadeAluno) {
 		nome = nameAluno;
 		idade = idadeAluno;
@@ -136,24 +142,57 @@ public class Aluno {
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
 	}
+	
+
+	public String getDisciplina1() {
+		return disciplina1;
+	}
+
+	public void setDisciplina1(String disciplina1) {
+		this.disciplina1 = disciplina1;
+	}
+
+	public String getDisciplina2() {
+		return disciplina2;
+	}
+
+	public void setDisciplina2(String disciplina2) {
+		this.disciplina2 = disciplina2;
+	}
+
+	public String getDisciplina3() {
+		return disciplina3;
+	}
+
+	public void setDisciplina3(String disciplina3) {
+		this.disciplina3 = disciplina3;
+	}
+
+	public String getDisciplina4() {
+		return disciplina4;
+	}
+
+	public void setDisciplina4(String disciplina4) {
+		this.disciplina4 = disciplina4;
+	}
 
 	
 	public double getMedia() {
-		return (nota1 + nota2 + nota3 + nota4) / 4; 
+		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
-	
 	
 	public boolean getAlunoAprovado() {
 		
 		double media = this.getMedia();
 		
-		if (media >= 70) {
+		if (media >= 70.0) {
 			return true;
 		} else {
 			
 			return false;
 		}
-	}
+	} 
+
 
 	@Override
 	public String toString() {
@@ -161,7 +200,8 @@ public class Aluno {
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
-				+ "]";
+				+ ", disciplina1=" + disciplina1 + ", disciplina2=" + disciplina2 + ", disciplina3=" + disciplina3
+				+ ", disciplina4=" + disciplina4 + "]";
 	}
 
 	@Override
@@ -180,8 +220,5 @@ public class Aluno {
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome);
 	}
-	
-	
-	
 	
 }
