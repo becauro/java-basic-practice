@@ -24,6 +24,7 @@ public class UmaClassJava {
 		String nota4 = JOptionPane.showInputDialog("Nota 4: ");
 		
 		Aluno aluno1 = new Aluno("Michel", 34);
+		Aluno aluno2 = new Aluno("Diego", 32);
 		
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
@@ -33,39 +34,62 @@ public class UmaClassJava {
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setNomeEscola(nomeEscola);
 		aluno1.setSerieMatriculado(serieMatriculado);
-
-		
-		
+			
 		aluno1.setNota1(Double.parseDouble(nota1));
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
 		aluno1.setNota4(Double.parseDouble(nota4));
 		
+	
 		
-		/* System.out.println("================ Dados Pessoais ================ \n");
+		aluno2.setDataNascimento(dataNascimento);
+		aluno2.setRegistroGeral(rg);
+		aluno2.setNumeroCpf(cpf);
+		aluno2.setNomeMae(nomeMae);
+		aluno2.setNomePai(nomePai);
+		aluno2.setDataMatricula(dataMatricula);
+		aluno2.setNomeEscola(nomeEscola);
+		aluno2.setSerieMatriculado(serieMatriculado);
+			
+		aluno2.setNota1(Double.parseDouble(nota1));
+		aluno2.setNota2(Double.parseDouble(nota2));
+		aluno2.setNota3(Double.parseDouble(nota3));
+		aluno2.setNota4(Double.parseDouble(nota4));
 		
-		System.out.println("Nome do aluno: " + aluno1.getNome());
-		System.out.println("Idade do aluno: " + aluno1.getIdade());
-		System.out.println("Data Nasc. do aluno: " + aluno1.getDataNascimento());
-		System.out.println("RG do aluno: " + aluno1.getRegistroGeral());
-		System.out.println("CPF do aluno: " + aluno1.getNumeroCpf());
-		System.out.println("Mãe do aluno: " + aluno1.getNomeMae());
-		System.out.println("Pai do aluno: " + aluno1.getNomePai());
-		System.out.println("Matricula do aluno: " + aluno1.getDataMatricula());
-		System.out.println("Escola do aluno: " + aluno1.getNomeEscola());
-		System.out.println("Serie do aluno: " + aluno1.getSerieMatriculado());
-		System.out.println("Data Matricula do aluno: " + aluno1.getDataMatricula()); */
 		
-		System.out.println(aluno1 + "\n");
+		System.out.println("================ Dados Pessoais ================");
+				
+		System.out.println("ALUNO 1: " + aluno1);
+		System.out.println("ALUNO 2: " + aluno2 + "\n");
 		
-		System.out.println("\n================ Boletim Acadêmico ================\n");
+		System.out.println("================ Boletim Acadêmico ================");
+		
+		System.out.println("======= ALUNO 1 =======");
 		
 		System.out.println("Nota 1: " + aluno1.getNota1());
 		System.out.println("Nota 2: " + aluno1.getNota2());
 		System.out.println("Nota 3: " + aluno1.getNota3());
-		System.out.println("Nota 4: " + aluno1.getNota4() + "\n");
-		System.out.println("Media do aluno: " + aluno1.getMedia());
-		System.out.println("Status do aluno: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+		System.out.println("Nota 4: " + aluno1.getNota4());
+		System.out.println("Media: " + aluno1.getMedia());
+		System.out.println("Status: " + (aluno1.getAlunoAprovado() ? "Aprovado\n" : "Reprovado\n"));
+		
+		
+		System.out.println("======= ALUNO 2 =======");
+		
+		System.out.println("Nota 1: " + aluno2.getNota1());
+		System.out.println("Nota 2: " + aluno2.getNota2());
+		System.out.println("Nota 3: " + aluno2.getNota3());
+		System.out.println("Nota 4: " + aluno2.getNota4());
+		System.out.println("Media: " + aluno2.getMedia());
+		System.out.println("Status: " + (aluno1.getAlunoAprovado() ? "Aprovado\n" : "Reprovado\n"));
+	
+		System.out.println("======= Alunos são iguais ? =======");
+	
+		if (aluno1.equals(aluno2)) {
+			System.out.println("SIM");
+		} else {
+			System.out.println("NÃO");
+		}
 	}
 	
 		
