@@ -42,7 +42,7 @@ public class UmaClassJava {
 		aluno1.setNota4(Double.parseDouble(nota4));
 		
 		
-		System.out.println("================ Dados Pessoais ================ \n");
+		/* System.out.println("================ Dados Pessoais ================ \n");
 		
 		System.out.println("Nome do aluno: " + aluno1.getNome());
 		System.out.println("Idade do aluno: " + aluno1.getIdade());
@@ -54,7 +54,9 @@ public class UmaClassJava {
 		System.out.println("Matricula do aluno: " + aluno1.getDataMatricula());
 		System.out.println("Escola do aluno: " + aluno1.getNomeEscola());
 		System.out.println("Serie do aluno: " + aluno1.getSerieMatriculado());
-		System.out.println("Data Matricula do aluno: " + aluno1.getDataMatricula());
+		System.out.println("Data Matricula do aluno: " + aluno1.getDataMatricula()); */
+		
+		System.out.println(aluno1 + "\n");
 		
 		System.out.println("\n================ Boletim Acadêmico ================\n");
 		
