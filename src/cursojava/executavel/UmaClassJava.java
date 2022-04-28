@@ -19,40 +19,11 @@ public class UmaClassJava {
 		String dataMatricula = JOptionPane.showInputDialog("Data de Matr.: ");
 		String nomeEscola = JOptionPane.showInputDialog("Nome da Escola: ");
 		String serieMatriculado = JOptionPane.showInputDialog("Série matriculado: ");
-		String disciplina1Name = JOptionPane.showInputDialog("Disc. 1:");
-		String nota1 = JOptionPane.showInputDialog("Nota 1: ");
-		String disciplina2Name = JOptionPane.showInputDialog("Disc. 2:");
-		String nota2 = JOptionPane.showInputDialog("Nota 2: ");
-		String disciplina3Name = JOptionPane.showInputDialog("Disc. 3:");
-		String nota3 = JOptionPane.showInputDialog("Nota 3: ");
-		String disciplina4Name = JOptionPane.showInputDialog("Disc. 4:");
-		String nota4 = JOptionPane.showInputDialog("Nota 4: ");
+		
 		
 		Aluno aluno1 = new Aluno("Michel", 34);
 		Aluno aluno2 = new Aluno("Diego", 32);
 		
-		
-		Disciplina disciplina1 = new Disciplina();
-		disciplina1.setDisciplina(disciplina1Name);
-		disciplina1.setNota(Double.parseDouble(nota1));
-		
-		Disciplina disciplina2 = new Disciplina();
-		disciplina2.setDisciplina(disciplina2Name);
-		disciplina2.setNota(Double.parseDouble(nota2));
-		
-		Disciplina disciplina3 = new Disciplina();
-		disciplina3.setDisciplina(disciplina3Name);
-		disciplina3.setNota(Double.parseDouble(nota3));
-				
-		Disciplina disciplina4 = new Disciplina();
-		disciplina4.setDisciplina(disciplina4Name);
-		disciplina4.setNota(Double.parseDouble(nota4));
-		
-		
-		aluno1.getDisciplinas().add(disciplina1);
-		aluno1.getDisciplinas().add(disciplina2);
-		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);
 		
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
@@ -64,11 +35,6 @@ public class UmaClassJava {
 		aluno1.setSerieMatriculado(serieMatriculado);
 
 		
-		aluno2.getDisciplinas().add(disciplina1);
-		aluno2.getDisciplinas().add(disciplina2);
-		aluno2.getDisciplinas().add(disciplina3);
-		aluno2.getDisciplinas().add(disciplina4);
-		
 		aluno2.setDataNascimento(dataNascimento);
 		aluno2.setRegistroGeral(rg);
 		aluno2.setNumeroCpf(cpf);
@@ -78,6 +44,22 @@ public class UmaClassJava {
 		aluno2.setNomeEscola(nomeEscola);
 		aluno2.setSerieMatriculado(serieMatriculado);
 
+		
+		for (int pos = 1; pos <=4; pos++) {
+			
+			String disciplinaName = JOptionPane.showInputDialog("Disc. "+pos+":");
+			String nota = JOptionPane.showInputDialog("Nota "+pos+":");
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(disciplinaName);
+			disciplina.setNota(Double.parseDouble(nota));
+			
+			
+			aluno1.getDisciplinas().add(disciplina);
+			aluno2.getDisciplinas().add(disciplina);
+		
+		}
+		
 		
 		System.out.println("================ Dados Pessoais ================");
 				
