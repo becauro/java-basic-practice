@@ -124,15 +124,19 @@ public class Aluno {
 		return sumNota / disciplinas.size(); /* size() return the length of an array */
 	}
 	
-	public boolean getAlunoAprovado() {
+	public String getAlunoAprovado() {
 		
 		double media = this.getMedia();
 		
-		if (media >= 70.0) {
-			return true;
+		if (media >= 50.0) {
+			if (media >=70) {
+				return "Aprovado";
+			} else {
+				return "Recuperação";
+			}
 		} else {
 			
-			return false;
+			return "Reprovado";
 		}
 	} 
 
