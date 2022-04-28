@@ -60,6 +60,17 @@ public class UmaClassJava {
 		
 		}
 		
+
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
+		
+		if (escolha == 0) {
+			String resposta = JOptionPane.showInputDialog("Disciplina 1, 2, 3 ou 4 ?");
+			
+			aluno1.getDisciplinas().remove(Integer.valueOf(resposta).intValue()-1);
+			aluno2.getDisciplinas().remove(Integer.valueOf(resposta).intValue()-1);
+		}
+			
+		
 		
 		System.out.println("================ Dados Pessoais ================");
 				
