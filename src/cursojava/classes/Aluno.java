@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -15,11 +17,11 @@ public class Aluno {
 	String nomeEscola;
 	String serieMatriculado;
 	
-	Disciplina disciplina = new Disciplina();
+	List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 	
 	public Aluno(String nameAluno, int idadeAluno) {
@@ -110,8 +112,7 @@ public class Aluno {
 	
 	
 	public double getMedia() {
-		return (disciplina.getNota1() + disciplina.getNota2() + 
-				disciplina.getNota3() + disciplina.getNota4()) / 4;
+		return 0;
 	}
 	
 	public boolean getAlunoAprovado() {
@@ -132,7 +133,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ serieMatriculado + "]";
 	}
 
 	@Override
