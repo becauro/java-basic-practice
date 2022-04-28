@@ -112,7 +112,16 @@ public class Aluno {
 	
 	
 	public double getMedia() {
-		return 0;
+		
+		double sumNota = 0.0;
+		
+		for (Disciplina disc : disciplinas ) {
+			
+			/* sumNota += disc.nota; /* This also works because "disciplinas" is public */
+			sumNota += disc.getNota(); 
+		}
+		
+		return sumNota / disciplinas.size(); /* size() return the length of an array */
 	}
 	
 	public boolean getAlunoAprovado() {
@@ -133,7 +142,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
 
 	@Override

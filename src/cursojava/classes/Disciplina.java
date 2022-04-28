@@ -5,11 +5,11 @@ public class Disciplina {
 	double nota;
 	String disciplina;
 
-	public double getNota1() {
+	public double getNota() {
 		return nota;
 	}
 
-	public void setNota1(double nota) {
+	public void setNota(double nota) {
 		this.nota = nota;
 	}
 
@@ -23,7 +23,7 @@ public class Disciplina {
 
 	@Override
 	public String toString() {
-		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
+		return "( disciplina=" + disciplina + ", " + "nota=" + nota + " )";
 	}
 	
 	
