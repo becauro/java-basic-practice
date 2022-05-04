@@ -79,31 +79,71 @@ public class UmaClassJava {
 		}
 
 
-			
+		int searchByName = JOptionPane.showConfirmDialog(null, "Deseja pesquisar por Nome ?");
+		
+		String searchWord = "";
+		if (searchByName == 0) {
+			searchWord = JOptionPane.showInputDialog("Digite o nome para pesquisa?");			
+		}
+		
 		/* SAÌDAS */
 		
 		/* System.out.println("================ Dados De Cada Aluno ================"); */
 
-		for (int pos = 0; pos <alunos.size(); pos++) {
-			int getIndex = pos + 1;
-			System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
-
-			/* System.out.println("================ Boletim Acadêmico ================"); */
-			
-			/* System.out.println("====== Aluno 1 ======"); */
-			
-			System.out.println("Media: " + alunos.get(pos).getMedia());
-			System.out.println("Status: " + alunos.get(pos).getAlunoAprovado() + "\n");
-
-	
-			/* System.out.println("======= Alunos são iguais ? =======");
+		if (searchByName == 0 && searchWord != null) {
+			boolean nameFound = false;
 		
-			if (aluno1.equals(aluno2)) {
-				System.out.println("SIM");
-			} else {
-				System.out.println("NÃO");
-			} */
+			for (int pos = 0; pos <alunos.size(); pos++) {
+				int getIndex = pos + 1;
+					
+				if ( alunos.get(pos).getNome().equalsIgnoreCase(searchWord)) {
+					System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
+
+					/* System.out.println("================ Boletim Acadêmico ================"); */
+					
+					/* System.out.println("====== Aluno 1 ======"); */
+					
+					System.out.println("Media: " + alunos.get(pos).getMedia());
+					System.out.println("Status: " + alunos.get(pos).getAlunoAprovado() + "\n");
+					nameFound = true;
+					break;
+				}
+
+				
+			}
+			
+			if (nameFound == false) {
+				
+				System.out.println("Aluno não encontrado!");
+			}
+			
+			
+		} else {
+				
+			for (int pos = 0; pos <alunos.size(); pos++) {
+				int getIndex = pos + 1;
+
+					System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
+
+					/* System.out.println("================ Boletim Acadêmico ================"); */
+					
+					/* System.out.println("====== Aluno 1 ======"); */
+					
+					System.out.println("Media: " + alunos.get(pos).getMedia());
+					System.out.println("Status: " + alunos.get(pos).getAlunoAprovado() + "\n");
+			}
+		
 		}
+		
+		/* System.out.println("======= Alunos são iguais ? =======");
+		
+		if (aluno1.equals(aluno2)) {
+			System.out.println("SIM");
+		} else {
+			System.out.println("NÃO");
+		} */
+		
+		
 	}
 
 }
