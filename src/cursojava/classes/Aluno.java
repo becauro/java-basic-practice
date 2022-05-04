@@ -15,6 +15,7 @@ public class Aluno {
 	String nomePai;
 	String dataMatricula;
 	String nomeEscola;
+	String country;
 	String serieMatriculado;
 	
 	List<Disciplina> disciplinas = new ArrayList<Disciplina>();
@@ -24,10 +25,9 @@ public class Aluno {
 		return disciplinas;
 	}
 	
-	public Aluno(String nameAluno, int idadeAluno) {
-		nome = nameAluno;
-		idade = idadeAluno;
-		
+	public Aluno(String nomeEscola, String country) {
+		this.nomeEscola = nomeEscola;
+		this.country = country;
 	}
 
 	public String getNome() {
@@ -98,10 +98,6 @@ public class Aluno {
 		return nomeEscola;
 	}
 
-	public void setNomeEscola(String nomeEscola) {
-		this.nomeEscola = nomeEscola;
-	}
-
 	public String getSerieMatriculado() {
 		return serieMatriculado;
 	}
@@ -109,8 +105,11 @@ public class Aluno {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
-	
-	
+		
+	public String getCountry() {
+		return country;
+	}
+
 	public double getMedia() {
 		
 		double sumNota = 0.0;
@@ -141,12 +140,14 @@ public class Aluno {
 	} 
 
 
+
+
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", country=" + country
+				+ ", serieMatriculado=" + serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
 
 	@Override
