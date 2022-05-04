@@ -65,10 +65,12 @@ public class UmaClassJava {
 			int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
 			
 			if (escolha == 0) {
+			
 				String resposta = JOptionPane.showInputDialog("Disciplina 1, 2, 3 ou 4 ?");
-				
-				aluno.getDisciplinas().remove(Integer.valueOf(resposta).intValue());
-
+				/* I've looked at the showInputDiolog return. That's why I handle with it bellow*/
+					if (resposta != null) {
+						aluno.getDisciplinas().remove(Integer.valueOf(resposta).intValue());
+					}
 			}
 			
 			alunos.add(aluno);
