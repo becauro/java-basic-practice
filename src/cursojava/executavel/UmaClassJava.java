@@ -78,7 +78,20 @@ public class UmaClassJava {
 			newAluno = JOptionPane.showConfirmDialog(null, "Deseja cadastrar mais algum aluno ?");
 		}
 
-
+		int removeSomeone = JOptionPane.showConfirmDialog(null, "Deseja remover algum aluno ?");
+				
+		String nameToRemove = "";
+		if (removeSomeone == 0) {
+			nameToRemove = JOptionPane.showInputDialog("Digite o nome para remover?");
+			
+			for (Aluno item : alunos) {
+				if (item.getNome().equalsIgnoreCase(nameToRemove)) {
+					alunos.remove(item);
+					break; /* Without this break the code "breaks" :-) */
+				}
+			}
+		}
+		
 		int searchByName = JOptionPane.showConfirmDialog(null, "Deseja pesquisar por Nome ?");
 		
 		String searchWord = "";
@@ -124,11 +137,6 @@ public class UmaClassJava {
 				int getIndex = pos + 1;
 
 					System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
-
-					/* System.out.println("================ Boletim Acadêmico ================"); */
-					
-					/* System.out.println("====== Aluno 1 ======"); */
-					
 					System.out.println("Media: " + alunos.get(pos).getMedia());
 					System.out.println("Status: " + alunos.get(pos).getAlunoAprovado() + "\n");
 			}
