@@ -19,7 +19,7 @@ public class UmaClassJava {
 		
 		while (newAluno == 0) {
 			
-			Aluno aluno = new Aluno("ISERJ", "");
+			Aluno aluno = new Aluno("ISERJ", "Brasil");
 			
 			String nome = JOptionPane.showInputDialog("Nome: ");
 			String idade = JOptionPane.showInputDialog("Idade: ");
@@ -91,6 +91,60 @@ public class UmaClassJava {
 				}
 			}
 		}
+		
+		
+		int replaceSomeone = JOptionPane.showConfirmDialog(null, "Deseja subtituir algum aluno ?");
+		
+		String nameToReplace = "";
+		if (replaceSomeone == 0) {
+			nameToReplace = JOptionPane.showInputDialog("Digite o nome a ser substituido ?");
+			
+			Aluno newbieAluno = new Aluno("ISERJ", "Brasil");
+			
+			newbieAluno.setNome("Newbie");
+			newbieAluno.setIdade(Integer.parseInt("32"));
+			newbieAluno.setDataNascimento("22-07-89");
+			newbieAluno.setRegistroGeral("1234567");
+			newbieAluno.setNumeroCpf("109.444.444-45");
+			newbieAluno.setNomeMae("Madalena");
+			newbieAluno.setNomePai("Torquato");
+			newbieAluno.setDataMatricula("22-07-2020");
+			newbieAluno.setSerieMatriculado("9");
+			
+			Disciplina disciplina1 = new Disciplina();
+			disciplina1.setDisciplina("Matemática");
+			disciplina1.setNota(Double.parseDouble("90"));
+
+			newbieAluno.getDisciplinas().add(disciplina1);
+			
+			Disciplina disciplina2 = new Disciplina();
+			disciplina2.setDisciplina("Português");
+			disciplina2.setNota(Double.parseDouble("77"));
+
+			newbieAluno.getDisciplinas().add(disciplina2);
+			
+			Disciplina disciplina3 = new Disciplina();
+			disciplina3.setDisciplina("Geografia");
+			disciplina3.setNota(Double.parseDouble("77"));
+
+			newbieAluno.getDisciplinas().add(disciplina3);
+			
+			Disciplina disciplina4 = new Disciplina();
+			disciplina4.setDisciplina("Historia");
+			disciplina4.setNota(Double.parseDouble("87"));
+
+			newbieAluno.getDisciplinas().add(disciplina4);
+			
+			for (int index = 0; index < alunos.size(); index++) {
+				if (alunos.get(index).getNome().equalsIgnoreCase(nameToReplace)) {
+					alunos.set(index, newbieAluno);
+					break; /* Without this break the code "breaks" :-) */
+				}
+			}
+		}
+		
+		
+		
 		
 		int searchByName = JOptionPane.showConfirmDialog(null, "Deseja pesquisar por Nome ?");
 		
