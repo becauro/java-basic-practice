@@ -17,6 +17,10 @@ public class UmaClassJava {
 		int newAluno = 0;
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
+		List<Aluno> aprovados = new ArrayList<Aluno>();
+		List<Aluno> reprovados = new ArrayList<Aluno>();
+		List<Aluno> recuperacao = new ArrayList<Aluno>();
+		
 		while (newAluno == 0) {
 			
 			Aluno aluno = new Aluno("ISERJ", "Brasil");
@@ -186,16 +190,45 @@ public class UmaClassJava {
 			
 			
 		} else {
+			
+			for (Aluno aluno : alunos) {
 				
-			for (int pos = 0; pos <alunos.size(); pos++) {
-				int getIndex = pos + 1;
-
-					System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
-					System.out.println("Media: " + alunos.get(pos).getMedia());
-					System.out.println("Status: " + alunos.get(pos).getAlunoAprovado() + "\n");
+				if (aluno.getAlunoAprovado() == "Aprovado") {
+					aprovados.add(aluno);
+				} else if (aluno.getAlunoAprovado() == "Recuperação") {
+					recuperacao.add(aluno);
+				} else {
+					reprovados.add(aluno);
+				}
+				
 			}
-		
-		}
+			
+			System.out.println("===============APROVADOS=====================");
+			for (int pos = 0; pos <aprovados.size(); pos++) {
+				int getIndex = pos + 1;
+					
+					System.out.println("ALUNO "+ getIndex +": " + aprovados.get(pos));
+					System.out.println("Media: " + aprovados.get(pos).getMedia());
+					System.out.println("Status: " + aprovados.get(pos).getAlunoAprovado() + "\n");	
+			}
+			
+			System.out.println("===============REPROVADOS=====================");
+			for (int pos = 0; pos <reprovados.size(); pos++) {
+				int getIndex = pos + 1;
+					
+					System.out.println("ALUNO "+ getIndex +": " + reprovados.get(pos));
+					System.out.println("Media: " + reprovados.get(pos).getMedia());
+					System.out.println("Status: " + reprovados.get(pos).getAlunoAprovado() + "\n");	
+			}
+			
+			System.out.println("===============RECUPERAÇÃO=====================");
+			for (int pos = 0; pos <recuperacao.size(); pos++) {
+				int getIndex = pos + 1;
+					
+					System.out.println("ALUNO "+ getIndex +": " + recuperacao.get(pos));
+					System.out.println("Media: " + recuperacao.get(pos).getMedia());
+					System.out.println("Status: " + recuperacao.get(pos).getAlunoAprovado() + "\n");	
+			}
 		
 		/* System.out.println("======= Alunos são iguais ? =======");
 		
@@ -206,6 +239,7 @@ public class UmaClassJava {
 		} */
 		
 		
+		}
 	}
 
 }
