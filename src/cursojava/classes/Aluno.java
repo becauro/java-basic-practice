@@ -108,13 +108,11 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", country=" + country
-				+ ", serieMatriculado=" + serieMatriculado + ", disciplinas=" + disciplinas + ", nome=" + nome
-				+ ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral=" + registroGeral
-				+ ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", country=" + country
+				+ ", serieMatriculado=" + serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
-	
-	
-	
+
 	
 }
