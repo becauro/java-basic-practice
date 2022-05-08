@@ -3,7 +3,7 @@ package cursojava.classes;
 public class Diretor extends Pessoa {
 
 	String registroEducacao;
-	String tempoDirecao;
+	int tempoDirecao;
 	String titulacao;
 	
 
@@ -15,11 +15,11 @@ public class Diretor extends Pessoa {
 		this.registroEducacao = registroEducacao;
 	}
 
-	public String getTempoDirecao() {
+	public int getTempoDirecao() {
 		return tempoDirecao;
 	}
 
-	public void setTempoDirecao(String tempoDirecao) {
+	public void setTempoDirecao(int tempoDirecao) {
 		this.tempoDirecao = tempoDirecao;
 	}
 	
