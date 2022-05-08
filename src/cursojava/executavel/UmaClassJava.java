@@ -12,7 +12,7 @@ import cursojava.constantes.StatusAluno;
 
 public class UmaClassJava {
 	
-	/* main é um metodo autoexecutável em Java*/
+	/* main é um metodo autoexecut�vel em Java :-)) */
 	
 	public static void main(String[] args) {
 		
