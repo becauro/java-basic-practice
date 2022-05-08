@@ -1,25 +1,35 @@
 package cursojava.executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.constantes.StatusAluno;
 
 public class UmaClassJava {
 	
-	/* main é um metodo autoexecutável em Java*/
+	/* main Ã© um metodo autoexecutÃ¡vel em Java*/
 	
 	public static void main(String[] args) {
 		
 		int newAluno = 0;
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
+		
 		List<Aluno> aprovados = new ArrayList<Aluno>();
 		List<Aluno> reprovados = new ArrayList<Aluno>();
-		List<Aluno> recuperacao = new ArrayList<Aluno>();
+		
+		
+		HashMap<String, List<Aluno>> myMaps = new HashMap<String, List<Aluno>>();
+		
+		myMaps.put(StatusAluno.APROVADO, aprovados);
+		myMaps.put(StatusAluno.REPROVADO, reprovados);
+		myMaps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>()); /* Different way */
+		
 		
 		while (newAluno == 0) {
 			
@@ -34,10 +44,10 @@ public class UmaClassJava {
 			String dataNascimento = JOptionPane.showInputDialog("Data de Nasc.: ");
 			String rg = JOptionPane.showInputDialog("RG: ");
 			String cpf = JOptionPane.showInputDialog("CPF: ");
-			String nomeMae = JOptionPane.showInputDialog("Nome da Mãe: ");
+			String nomeMae = JOptionPane.showInputDialog("Nome da MÃ£e: ");
 			String nomePai = JOptionPane.showInputDialog("Nome da Pai: ");
 			String dataMatricula = JOptionPane.showInputDialog("Data de Matr.: ");
-			String serieMatriculado = JOptionPane.showInputDialog("Série matriculado: "); */	
+			String serieMatriculado = JOptionPane.showInputDialog("SÃ©rie matriculado: "); */	
 
 			aluno.setNome(nome);
 			aluno.setIdade(Integer.parseInt(idade));
@@ -116,13 +126,13 @@ public class UmaClassJava {
 			newbieAluno.setSerieMatriculado("9");
 			
 			Disciplina disciplina1 = new Disciplina();
-			disciplina1.setDisciplina("Matemática");
+			disciplina1.setDisciplina("MatemÃ¡tica");
 			disciplina1.setNota(Double.parseDouble("90"));
 
 			newbieAluno.getDisciplinas().add(disciplina1);
 			
 			Disciplina disciplina2 = new Disciplina();
-			disciplina2.setDisciplina("Português");
+			disciplina2.setDisciplina("PortuguÃªs");
 			disciplina2.setNota(Double.parseDouble("77"));
 
 			newbieAluno.getDisciplinas().add(disciplina2);
@@ -157,7 +167,7 @@ public class UmaClassJava {
 			searchWord = JOptionPane.showInputDialog("Digite o nome para pesquisa?");			
 		}
 		
-		/* SAÌDAS */
+		/* SAï¿½DAS */
 		
 		/* System.out.println("================ Dados De Cada Aluno ================"); */
 
@@ -170,7 +180,7 @@ public class UmaClassJava {
 				if ( alunos.get(pos).getNome().equalsIgnoreCase(searchWord)) {
 					System.out.println("ALUNO "+ getIndex +": " + alunos.get(pos));
 
-					/* System.out.println("================ Boletim Acadêmico ================"); */
+					/* System.out.println("================ Boletim Acadï¿½mico ================"); */
 					
 					/* System.out.println("====== Aluno 1 ======"); */
 					
@@ -185,7 +195,7 @@ public class UmaClassJava {
 			
 			if (nameFound == false) {
 				
-				System.out.println("Aluno não encontrado!");
+				System.out.println("Aluno nÃ£o encontrado!");
 			}
 			
 			
@@ -193,12 +203,20 @@ public class UmaClassJava {
 			
 			for (Aluno aluno : alunos) {
 				
-				if (aluno.getAlunoAprovado() == "Aprovado") {
+				/* if (aluno.getAlunoAprovado() == "Aprovado") {
 					aprovados.add(aluno);
-				} else if (aluno.getAlunoAprovado() == "Recuperação") {
+				} else if (aluno.getAlunoAprovado() == "RecuperaÃ§Ã£o") {
 					recuperacao.add(aluno);
 				} else {
 					reprovados.add(aluno);
+				} */
+				
+				if (aluno.getAlunoAprovado() == StatusAluno.APROVADO) {
+					myMaps.get(StatusAluno.APROVADO).add(aluno);
+				} else if (aluno.getAlunoAprovado() == StatusAluno.RECUPERACAO) {
+					myMaps.get(StatusAluno.RECUPERACAO).add(aluno);
+				} else {
+					myMaps.get(StatusAluno.REPROVADO).add(aluno);
 				}
 				
 			}
@@ -221,21 +239,21 @@ public class UmaClassJava {
 					System.out.println("Status: " + reprovados.get(pos).getAlunoAprovado() + "\n");	
 			}
 			
-			System.out.println("===============RECUPERAÇÃO=====================");
-			for (int pos = 0; pos <recuperacao.size(); pos++) {
+			System.out.println("===============RECUPERAÃ‡ÃƒO====================="); /* Different way */
+			for (int pos = 0; pos <myMaps.get(StatusAluno.RECUPERACAO).size(); pos++) {
 				int getIndex = pos + 1;
 					
-					System.out.println("ALUNO "+ getIndex +": " + recuperacao.get(pos));
-					System.out.println("Media: " + recuperacao.get(pos).getMedia());
-					System.out.println("Status: " + recuperacao.get(pos).getAlunoAprovado() + "\n");	
+					System.out.println("ALUNO "+ getIndex +": " + myMaps.get(StatusAluno.RECUPERACAO).get(pos));
+					System.out.println("Media: " + myMaps.get(StatusAluno.RECUPERACAO).get(pos).getMedia());
+					System.out.println("Status: " + myMaps.get(StatusAluno.RECUPERACAO).get(pos).getAlunoAprovado() + "\n");	
 			}
 		
-		/* System.out.println("======= Alunos são iguais ? =======");
+		/* System.out.println("======= Alunos sÃ£o iguais ? =======");
 		
 		if (aluno1.equals(aluno2)) {
 			System.out.println("SIM");
 		} else {
-			System.out.println("NÃO");
+			System.out.println("NÃƒO");
 		} */
 		
 		
