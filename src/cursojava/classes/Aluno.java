@@ -104,6 +104,12 @@ public class Aluno extends Pessoa {
 		}
 	}
 
+	
+	/* maiorIdade was created just for test the overrider feature */
+	@Override
+	public boolean maiorIdade() {
+		return super.idade >= 16;
+	}
 
 
 	@Override
