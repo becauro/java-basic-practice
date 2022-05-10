@@ -111,7 +111,13 @@ public class Aluno extends Pessoa {
 		return super.idade >= 16;
 	}
 
-
+	@Override
+	public double salario() {
+		
+		return 1800.00;
+	} 
+	
+	
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="

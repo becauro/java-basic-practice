@@ -32,6 +32,12 @@ public class Diretor extends Pessoa {
 	}
 
 	@Override
+	public double salario() {
+		
+		return 8000.00;
+	} 
+		
+	@Override
 	public String toString() {
 		return "Diretor [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai

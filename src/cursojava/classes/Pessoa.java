@@ -10,6 +10,8 @@ public abstract class Pessoa {
 	protected String nomeMae;
 	protected String nomePai;
 	
+	/* salario() was created just fot test an abstract method */
+	public abstract double salario();
 
 	public String getNome() {
 		return nome;
