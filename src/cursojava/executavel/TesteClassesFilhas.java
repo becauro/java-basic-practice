@@ -1,5 +1,6 @@
 package cursojava.executavel;
 
+import cursojava.classes.Pessoa;
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Secretario;
@@ -30,11 +31,26 @@ public class TesteClassesFilhas {
 		sec1.setIdade(20);
 		
 		
-	 System.out.println("Aluno: " + aluno1.getNome() + " | Maior idade: " + aluno1.maiorIdade() + " | Salário: " + aluno1.salario());
-	 
-	 System.out.println("Diretor: " + diretor1.getNome() + " | Maior idade: " + diretor1.maiorIdade() + " | Salário: " + diretor1.salario());
-	 
-	 System.out.println("Secretário: " + sec1.getNome() + " | Maior idade: " + sec1.maiorIdade() + " | Salário: " + sec1.salario());
-	 
+		/* For polimosphism test I've instantiated a Pessoa class using one of its subclass*/
+		Pessoa aluno2 = new Aluno("ISERJ", "Brasil");
+		aluno2.setNome("Diego");
+		
+
+		System.out.println("Aluno: " + aluno1.getNome() + " | Maior idade: " + aluno1.maiorIdade() + " | Salário: " + aluno1.salario());
+		System.out.println("Aluno: " + aluno2.getNome() + " | Maior idade: " + aluno2.maiorIdade() + " | Salário: " + aluno2.salario());
+		
+		 
+		 /* For polimosphism test */
+		 forPolimorphismTest(diretor1);
+		 forPolimorphismTest(sec1);
+		 
 	}
+	
+	/* For polimosphism test */
+	public static void forPolimorphismTest(Pessoa pessoa) {
+		
+		System.out.println(pessoa.getNome() + " | Maior idade: " + pessoa.maiorIdade() + " | Salário: " + pessoa.salario());
+		 
+	}
+	
 }
