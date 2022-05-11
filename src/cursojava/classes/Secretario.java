@@ -1,11 +1,33 @@
 package cursojava.classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 	
 	String registro;
 	String nivelCargo;
 	String experiencia;
 	
+	String user;
+	String password;
+
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getRegistro() {
 		return registro;
 	}
@@ -41,6 +63,13 @@ public class Secretario extends Pessoa {
 				+ ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae
 				+ ", nomePai=" + nomePai + ", registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia="
 				+ experiencia + "]";
+	}
+	
+	
+	@Override
+	public boolean autenticar() {
+		
+		return user.equals("Admin") && password.equals("Admin");
 	}
 		
 }
