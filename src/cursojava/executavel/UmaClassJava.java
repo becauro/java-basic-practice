@@ -17,15 +17,13 @@ public class UmaClassJava {
 	/* main é um método autoexecutável em Java :-)) */
 	
 	public static void main(String[] args) {
-		
-		
-		PermitirAcesso sec1 = new Secretario();
 
 		String username = JOptionPane.showInputDialog("Tell us your Username");
 		String password = JOptionPane.showInputDialog("Tell us your Password");
 		
+		PermitirAcesso sec1 = new Secretario(username, password);
 		
-		if (sec1.autenticar(username, password)) {
+		if (sec1.autenticar()) {
 			
 		
 			int newAluno = 0;
