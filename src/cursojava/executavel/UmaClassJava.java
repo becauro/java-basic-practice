@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class UmaClassJava {
 	
@@ -18,17 +19,14 @@ public class UmaClassJava {
 	public static void main(String[] args) {
 		
 		
-		Secretario sec1 = new Secretario();
-		
+		PermitirAcesso sec1 = new Secretario();
+
 		String username = JOptionPane.showInputDialog("Tell us your Username");
 		String password = JOptionPane.showInputDialog("Tell us your Password");
 		
-		sec1.setUser(username);
-		sec1.setPassword(password);
 		
-		if (sec1.autenticar()) {
-		
-		
+		if (sec1.autenticar(username, password)) {
+			
 		
 			int newAluno = 0;
 			List<Aluno> alunos = new ArrayList<Aluno>();
