@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.Autenticacao;
 import cursojava.constantes.StatusAluno;
-import cursojava.interfaces.PermitirAcesso;
+//import cursojava.interfaces.PermitirAcesso;
 
 public class UmaClassJava {
 	
@@ -21,15 +22,14 @@ public class UmaClassJava {
 		String username = JOptionPane.showInputDialog("Tell us your Username");
 		String password = JOptionPane.showInputDialog("Tell us your Password");
 		
-		PermitirAcesso sec1 = new Secretario(username, password);
+//		PermitirAcesso sec1 = new Secretario(username, password);
+//		Autenticacao auth1 = new Autenticacao(sec1); 
 		
-		if (sec1.autenticar()) {
-			
+		/* if (auth1.autenticador()) { */
+		if (new Autenticacao(new Secretario(username, password)).autenticador()) {
 		
 			int newAluno = 0;
 			List<Aluno> alunos = new ArrayList<Aluno>();
-			
-			
 			List<Aluno> aprovados = new ArrayList<Aluno>();
 			List<Aluno> reprovados = new ArrayList<Aluno>();
 			
